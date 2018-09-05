@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" manifest="11_example.appcache">
+<head>
+    <title>HTML5 Application Cache</title>
+	<script>
+	var appCache = window.applicationCache;
+
+switch (appCache.status) {
+  case appCache.UNCACHED:
+    return 'UNCACHED';
+    break;
+  case appCache.IDLE:
+    return 'IDLE';
+    break;
+  case appCache.CHECKING:
+    return 'CHECKING';
+    break;
+  case appCache.DOWNLOADING:
+    return 'DOWNLOADING';
+    break;
+  case appCache.UPDATEREADY:
+    return 'UPDATEREADY';
+    break;
+  case appCache.OBSOLETE:
+    return 'OBSOLETE';
+    break;
+  default:
+    return 'UKNOWN CACHE STATUS';
+    break;
+};
+var appCache = window.applicationCache;
+appCache.update();
+//..
+if (appCache.status == window.applicationCache.UPDATEREADY)
+{
+  appCache.swapCache();
+}
+</script>
+</head>
+<body>
+    <!--The document content will be inserted here-->
+</body>
+</html>

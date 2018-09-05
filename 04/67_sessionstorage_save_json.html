@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of HTML5 Session Storage</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+var complexdata = [1, 2, 3, 4, 5, 6];
+
+// store array data to the session storage
+sessionStorage.setItem("list_data_key",  JSON.stringify(complexdata));
+
+//Use JSON to retrieve the stored data and convert it 
+var storedData = sessionStorage.getItem("complexdata");
+if (storedData) {
+  complexdata = JSON.parse(storedData);
+}
+</script>
+</head>
+<body>
+</body>
+</html>                            

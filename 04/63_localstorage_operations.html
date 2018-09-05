@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of HTML5 Session Storage</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+localStorage.setItem("name", "Fort Hays State University"); //saves to the database, key/value
+document.write(localStorage.getItem("name")); //Fort Hays State University!
+localStorage.removeItem("name"); //deletes the matching item from the database
+
+//Or alternatively you can save a value to the database using this syntax
+localStorage.name= "Fort Hays State University";
+</script>
+</head>
+<body>
+</body>
+</html>                            
