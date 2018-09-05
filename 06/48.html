@@ -1,0 +1,18 @@
+<html>
+<head>
+<script>
+// "Named Class Expression" (alas, no such term, but that's what's going on)
+let User = class MyClass {
+  sayHi() {
+    alert(MyClass); // MyClass is visible only inside the class
+  }
+};
+
+new User().sayHi(); // works, shows MyClass definition
+
+console.log(MyClass); // error, MyClass not visible outside of the class
+</script>
+</head>
+<body>
+</body>
+</html>

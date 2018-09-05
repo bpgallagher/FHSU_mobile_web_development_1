@@ -1,0 +1,20 @@
+<html>
+<head>
+<script>
+let arr = [1, 2, 3, 4, 5];
+
+let result = arr.reduce((sum, current) => sum + current, 0);
+
+console.log(result); // 15
+
+// equivalent to
+result = arr.reduce(function(previousValue, item, index, arr) {
+  return previousValue=previousValue+item;
+}, 0);
+console.log(result);
+</script>
+</head>
+<body>
+
+</body>
+</html>

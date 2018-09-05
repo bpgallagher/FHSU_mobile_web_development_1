@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length)
+console.log(lengths); // 5,7,6
+
+// equivalent to
+lengths = ["Bilbo", "Gandalf", "Nazgul"].map(function(item, index, array) {
+  return item.length;
+})
+console.log(lengths); // 5,7,6
+</script>
+</head>
+<body>
+
+</body>
+</html>

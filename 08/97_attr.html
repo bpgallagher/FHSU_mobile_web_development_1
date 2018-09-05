@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<title>My Example</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $( function() {
+    $( "button" ).click( function() {
+      $( "p" ).text( $("img").attr( "alt" ) );
+    });
+  });
+</script>
+
+<button>Get 'alt' attribute!</button>
+<p></p>
+<img src="/pix/samples/3m.jpg" alt="Photo of Rob Roy Glacier in New Zealand">

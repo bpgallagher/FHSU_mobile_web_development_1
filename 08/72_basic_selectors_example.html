@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example</title>
+  </head>
+  <body>
+  <p></p>
+  <div class="shy">This will be hidden</div>
+  <div id="nav">This will be hidden</div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(function() {
+  // Select all "p" elements and write "Hello"
+  $( "p" ).text( "Hello" );
+
+  // Change the color of all "p" elements to red
+  $( "p" ).css( "color", "red" );
+
+  // Hide all elements with the ".shy" class
+  $( ".shy" ).hide();
+
+  // Show the element with the "#nav" id
+  $( "#nav" ).show();
+  }
+  </script>
+  </body>
+</html>

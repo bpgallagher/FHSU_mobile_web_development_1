@@ -1,0 +1,14 @@
+<body>
+<main style="position: relative" id="main">
+  <article>
+    <div id="example" style="position: absolute; left: 180px; top: 180px">...</div>
+  </article>
+</main>
+<script>
+  console.log(example.offsetParent.id); // main
+  console.log(example.offsetLeft); // 180 (note: a number, not a string "180px")
+  console.log(example.offsetTop); // 180
+  console.log('Current scroll from the top: ' + window.pageYOffset);
+console.log('Current scroll from the left: ' + window.pageXOffset);
+</script>
+</body>

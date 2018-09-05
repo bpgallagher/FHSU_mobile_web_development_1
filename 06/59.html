@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+<input id="input" type="button" value="Click me">
+<script>
+  function handler1() {
+    alert('Thanks!');
+  };
+
+  function handler2() {
+    alert('Thanks again!');
+  }
+
+  input.onclick = () => alert("Hello");
+  input.addEventListener("click", handler1); // Thanks!
+  input.addEventListener("click", handler2); // Thanks again!
+//input.removeEventListener("click", handler1);
+</script>
+</body>
+</html>

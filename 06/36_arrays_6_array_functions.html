@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+let arr = [1, 0, false];
+console.log( arr.indexOf(0) ); // 1
+console.log( arr.indexOf(false) ); // 2
+console.log( arr.indexOf(null) ); // -1
+console.log( arr.includes(1) ); // true
+
+// FIND
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+let user = users.find(item => item.id == 1);
+console.log(user.name); // John
+
+// FILTER
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+// returns array of the first two users
+let someUsers = users.filter(item => item.id < 3);
+console.log(someUsers.length); // 2
+</script>
+</head>
+<body>
+
+</body>
+</html>

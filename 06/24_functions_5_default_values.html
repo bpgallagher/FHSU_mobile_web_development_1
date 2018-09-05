@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function showProfilePicture(user, pictureURL= "N/A") {
+  console.log('The picture of ' + user +" is : " + pictureURL );
+}
+
+showProfilePicture("Ann");
+
+// calling a function by default
+function showProfilePicture2(user, pictureURL=showDefaultPicture()) {
+  console.log('The picture of ' + user +" is : " + pictureURL );
+}
+function showDefaultPicture() {
+	placeholderURL='N/A';
+  return placeholderURL;
+}
+showProfilePicture2("Ann");
+</script>
+</head>
+<body>
+
+</body>
+</html>

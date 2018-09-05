@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example</title>
+  </head>
+  <body>
+  <h1>See paragraph below</h1>
+  <p></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+// Put jQuery into no-conflict mode (and assign '$j' as an alias)
+var $j = jQuery.noConflict();
+
+// Write some jQuery code (using '$j' as the alias)
+	$j( "p" ).text( "Hello" );
+</script>
+  </body>
+</html>

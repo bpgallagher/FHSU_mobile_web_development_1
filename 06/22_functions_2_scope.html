@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+// EXAMPLE OF LOCAL VARIABLE
+function showMessage() {
+  let message = "Hello, I'm JavaScript!"; // local variable
+  console.log( message );
+}
+showMessage(); // Hello, I'm JavaScript!
+console.log( message ); // <-- Error! The variable is local to the function
+
+
+// EXAMPLE OF AN OUTER VARIABLE
+let userName = 'John';
+function showMessage2() {
+  let message2 = 'Hello, ' + userName;
+  alert(message2);
+}
+showMessage2(); // Hello, John
+</script>
+</head>
+<body>
+
+</body>
+</html>

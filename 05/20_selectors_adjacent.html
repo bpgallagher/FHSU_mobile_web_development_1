@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Example of CSS Adjacent Sibling Selectors</title>
+<style type="text/css">
+	h1 + p {
+		color: blue;
+		font-size: 18px;
+	}
+	ul.task + p {
+		color: #f0f;
+		text-indent: 30px;
+	}
+</style>
+</head>
+<body>
+	<h1>This is a heading</h1>
+	<p>This is a paragraph.</p>
+	<p>This is another paragraph.</p>
+	<ul class="task">
+		<li>Task 1</li>
+		<li>Task 2</li>
+		<li>Task 3</li>
+	</ul>
+	<p>This is one more paragraph.</p>
+	<p>This is also a paragraph.</p>
+</body>
+</html>                            

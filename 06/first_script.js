@@ -1,0 +1,1 @@
+document.getElementById('hello').innerText = 'This message was written via Javascript!';
