@@ -1,0 +1,17 @@
+<!doctype html>
+<title>Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $( function() {
+    $( "button" ).click( function() {
+      $( "#data" ).load( "https://www.quackit.com/jquery/tutorial/latestData.html", function() {
+        $( "#status" ).html( "<h1 style='color:tomato'>Done!</h1>" );
+      });      
+    });
+  });
+</script>
+
+<button>Load Latest Data</button>
+
+<div id="data"></div>
+<div id="status"></div>

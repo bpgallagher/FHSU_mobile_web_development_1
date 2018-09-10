@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.divs{display:none}
+</style>
+</head>
+<body>
+<div class="divs" id="A"></div>
+<p class="divs" id="B"></p>
+<p class="divs" id="C"></p>
+
+<button class="btn-a" data-link="A">A</button>
+<button class="btn-a" data-link="B">B</button>
+<button class="btn-a" data-link="C">C</button>
+<button class="btn-a" data-link="xxxsC">C</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.router.min.js"></script>
+<script src="jquery.deparam.min.js"></script>
+<script>
+let hashs=['#/A','#/B','#/C'];
+let hash = window.location.hash;
+let current='';
+if(hash===undefined || hash.length==0 || !hashs.includes(hash)){
+	current='#/A';
+	$.router.set(current);
+}
+$(window).on('hashchange', function() {
+  if(hashs.includes(window.location.hash)) current=hash;
+  else $.router.set('#/A', false, true);
+});
+$.route('/A', function(){
+	loadContent('A');
+});
+$.route('/B', function () {
+	loadContent('B');
+});
+$.route('/C', function (){
+	loadContent('C');
+});
+
+$('.btn-a').on('click',function(){
+	current=$(this).data('link');
+	$.router.set('#/'+$(this).data('link'));
+})
+$.router.init();
+
+function loadContent(name){
+	$('.divs').hide();
+	$('#'+name).show();
+	if($('#'+name).text().length==0) $('#'+name).text(name);
+	else console.log('reload');
+}
+</script>
+</body>
+</html>

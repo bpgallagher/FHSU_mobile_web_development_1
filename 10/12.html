@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var stateObj = { foo: "bar" };
+history.pushState(stateObj, "page 2", "bar.html");
+
+
+var numberOfEntries = window.history.length;
+console.log(numberOfEntries);
+</script>
+</body>
+</html>

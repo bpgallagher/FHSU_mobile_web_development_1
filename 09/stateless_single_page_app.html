@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://designshack.net/tutorialexamples/responsive-vcard-template/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Type" content="text/html">
+<title>HTML5/CSS3 Mini vCard Layout - Design Shack Demo</title>
+<meta name="author" content="Jake Rocheleau">
+<link rel="shortcut icon" href="http://designshack.net/favicon.ico">
+<link rel="icon" href="http://designshack.net/favicon.ico">
+<link rel="stylesheet" type="text/css" media="all" href="./stateless_single_page_app/styles.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body style="">
+<div id="w">
+<div id="content">
+<nav id="topnav">
+<ul class="clearfix">
+<li><a href="#profile" class="sel">Profile</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<h1>Johnny Appleseed</h1>
+<section id="profile">
+<div id="portrait"><img src="./stateless_single_page_app/portrait.png" alt="vcard photo portrait"></div>
+<h2>Web Designer &amp; Developer</h2>
+<h3>Bio:</h3>
+<p>Ever since I was young I have enjoyed creating. By high school I was already experimenting on the Internet building small HTML pages. The abundance of tutorials have allowed me to study by myself and expand my skillset without any formal training.</p>
+<p>Out of high school I began freelancing. It started with basic frontend web development, but has since grown to incorporate backend languages along with user interface design. I use all the common Adobe Creative Suite software to design logos, icons, textures, backgrounds, and full layout mockups.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a metus tortor. Pellentesque suscipit augue dictum venenatis gravida. Etiam vitae rutrum felis. Maecenas in ultricies risus. Vestibulum et bibendum magna. Aenean ut mauris ullamcorper, lobortis metus at, suscipit ante. Morbi tempor sapien sit amet tempor gravida.</p>
+</section>
+<section id="resume" class="hideme">
+<h2>My Skills &amp; Experience</h2>
+
+<div class="skillbar clearfix">
+<div class="skillbar-title"><span>HTML/CSS (8 yrs)</span></div>
+<div class="skillbar-bar htmlcss"></div>
+</div>
+<div class="skillbar clearfix">
+<div class="skillbar-title"><span>SEO (6 yrs)</span></div>
+<div class="skillbar-bar seo"></div>
+</div>
+<div class="skillbar clearfix">
+<div class="skillbar-title"><span>jQuery (2 yrs)</span></div>
+<div class="skillbar-bar jquery"></div>
+</div>
+<div class="skillbar clearfix">
+<div class="skillbar-title"><span>PHP/MySQL (4 yrs)</span></div>
+<div class="skillbar-bar phpmysql"></div>
+</div>
+<div class="skillbar clearfix">
+<div class="skillbar-title"><span>Photoshop (9 yrs)</span></div>
+<div class="skillbar-bar photoshop"></div>
+</div>
+<div class="skillbar clearfix">
+<div class="skillbar-title"><span>Illustrator (4 yrs)</span></div>
+<div class="skillbar-bar illustrator"></div>
+</div>
+<br><br>
+<h2>Education</h2>
+<div class="expinfo">
+<h3>Over the Rainbow High</h3>
+<h4>From 2000-2005</h4>
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla tristique tristique orci sed lacinia. Proin at metus egestas, vestibulum sapien ut, pharetra quam. Maecenas sit amet erat eros.</p>
+</div>
+<div class="expinfo">
+<h3>California Institute of the Arts</h3>
+<h4>From 2005-2010</h4>
+<p>In laoreet aliquam odio, ac aliquam risus ultricies a. Nunc purus metus, eleifend at metus posuere, ultricies egestas libero. Fusce tincidunt sapien sit amet vulputate auctor. Curabitur id sem ultricies augue feugiat rhoncus vel quis enim.</p>
+</div>
+<br>
+<h2>Employment</h2>
+<div class="expinfo">
+<h3>Freelance Designer/Developer</h3>
+<h4>From 2006-current</h4>
+<p>Duis eu augue id mauris feugiat iaculis. Pellentesque id lacus elementum, convallis diam rhoncus, porta magna.</p>
+<p>Nulla luctus mattis turpis, et convallis lectus. In volutpat vel arcu et facilisis. Integer ac mollis nisi, a ullamcorper nisl. Phasellus semper, dui sed dapibus porta, odio quam ultricies felis, at interdum libero ligula ac purus.</p>
+</div>
+</section>
+<section id="portfolio" class="hideme">
+<h2>Some Work History</h2>
+<p>Below are various instances of design work. Click any thumbnail to check out the original source.</p>
+<ul id="portfoliolist" class="clearfix">
+<li><a href="http://dribbble.com/shots/1374403-GorgunMakina-Web-Design" target="_blank"><img src="./stateless_single_page_app/01-tablet-webdesign.jpg"></a></li>
+<li class="alt"><a href="http://dribbble.com/shots/1373527-Laracon-Invasion" target="_blank"><img src="./stateless_single_page_app/02-landing-page-layout.jpg"></a></li>
+<li><a href="http://dribbble.com/shots/1372860-G-Shop" target="_blank"><img src="./stateless_single_page_app/03-shop-ecommerce-mockup.jpg"></a></li>
+<li class="alt"><a href="http://dribbble.com/shots/1368284-RWD-Illustration" target="_blank"><img src="./stateless_single_page_app/04-responsive-web-design-illustration.jpg"></a></li>
+</ul>
+</section>
+<section id="contact" class="hideme">
+<h2>Get in Touch?</h2>
+<p>The best way to reach me is through e-mail. Fill out the sample form below to get your message to me. I check e-mail once per day so I can often get back to you quickly.</p>
+<form id="contactform" method="post" action="https://designshack.net/tutorialexamples/responsive-vcard-template/#">
+<label for="usrname">Your name</label>
+<input type="text" name="name" id="usrname" class="basic">
+<label for="usremail">Your e-mail</label>
+<input type="email" name="email" id="usremail" class="basic">
+<label for="usrmsg">Share your thoughts!</label>
+<textarea name="msg" id="usrmsg"></textarea>
+<input type="submit" name="submit" id="submitbtn" value="Send Message">
+</form>
+</section>
+</div>
+</div>
+<script type="text/javascript">
+$(function(){
+  $('#topnav ul li a').on('click', function(e){
+    e.preventDefault();
+    var current = $('#topnav ul li a.sel');
+    var newpg   = $(this).attr('href');
+    var oldpg   = current.attr('href');
+    
+    current.removeClass('sel');
+    
+    $(oldpg).fadeOut(300, function(){
+      $(newpg).fadeIn(180);
+    });
+    
+    $(this).addClass('sel');
+  });
+  $('#contactform').submit(function(e){
+    e.preventDefault();
+  });
+});
+</script>
+
+</body></html>

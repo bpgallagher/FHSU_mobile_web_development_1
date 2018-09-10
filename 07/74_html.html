@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $( function() {
+    $( "button" ).click( function() {
+      $( ".warning" ).html( "<p style='color:red;font-size:larger;'><strong>Hey!</strong> I thought I warned you not to do that!</p>" );
+    });
+  });
+</script>
+
+<button>Click me!</button>
+<div class="warning">
+  <p>Don't do it!</p>
+</div>

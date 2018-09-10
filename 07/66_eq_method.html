@@ -1,0 +1,34 @@
+<!doctype html>
+<title>Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $( function() {
+    $( "button" ).click( function() {
+      $( "li" ).eq( 4 ).css( "background-color", "yellow" );
+    });
+  });
+</script>
+
+<button>Highlight the 5th list item</button>
+
+<ul>
+  <li>Apples
+    <ul>
+      <li>Big ones</li>
+      <li>Juicy ones</li>
+      <li>Red ones</li>
+    </ul>
+  </li>
+  <li>Oranges</li>
+  <li>Papaya
+    <ul>
+      <li>Papaya carica</li>
+      <li>Carica</li>
+      <li>Carica pubescens</li>
+    </ul>
+  </li>
+  <li>Lychee</li>
+  <li>Rambutan</li>
+  <li>Passionfruit</li>
+  <li>Mango</li>
+</ul>

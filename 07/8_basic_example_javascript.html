@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      // Your jQuery code goes here
+    </script>
+  </head>
+  <body>
+
+    <!-- 
+    HTML content goes here 
+    You can also put jQuery code here
+    -->
+<script>
+$(function () {
+  $("#exampleButton").click(function(){
+    $('#exampleDiv').toggle("fast");
+    
+    if ($.trim($(this).text()) === 'Click me to Hide the Box') {
+      $(this).text('Click me to Show the Box');
+    } else {
+      $(this).text('Click me to Hide the Box');        
+}
+  });
+});
+</script>
+<button class="btn btn-default" id="exampleButton">Click me to Hide the Box</button>
+<div id="exampleDiv" style="padding: 20px; margin: 10px 0;border:1px solid orange;border-radius: 5px;">
+  <p>You can use jQuery to create expanding/collapsing content — like this!</p>
+</div>
+  </body>
+</html>

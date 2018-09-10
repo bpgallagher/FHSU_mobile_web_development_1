@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $( function() {
+    $( "button" ).click( function() {
+      $( "li" ).filter( ":odd" ).fadeOut( "slow" );
+    });
+  });
+</script>
+
+<button>Fade out the odd list items</button>
+
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Papaya</li>
+  <li>Lychee</li>
+  <li>Rambutan</li>
+  <li>Passionfruit</li>
+  <li>Mango</li>
+</ul>
+<p>Odd ones start at the second list item (zero-based indexing).</p>

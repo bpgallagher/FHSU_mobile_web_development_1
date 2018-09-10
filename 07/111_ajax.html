@@ -1,0 +1,17 @@
+<!doctype html>
+<title>Example</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(function() {
+  $("#getData").click(function() {
+    $.ajax({
+      url: "https://www.quackit.com/jquery/tutorial/latestData.html",
+      success: function ( data ) {
+        $( "#data" ).html( data )
+      }
+    });
+  });
+});
+</script>
+<button id="getData">Load Latest Data</button>
+<div id="data"></div>

@@ -1,0 +1,33 @@
+<!doctype html>
+<title>Example</title>
+<style>
+.box {
+  background: orange;
+  color: white;
+  width: 150px;
+  padding: 20px;
+  margin: 10px;
+}
+.inner,
+.inner > p {
+  border: 1px dotted white;
+  padding: 5px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>a
+<script>
+  $( function() {
+    $( "button" ).click( function() {
+      $( ".box" ).empty();
+    });
+  });
+</script>
+<button>Empty the Box!</button>
+
+<div class="box">
+  <div class="inner">
+    <p>Main content.</p>
+    <p>More content.</p>
+    <p>Extra content.</p>
+  </div>
+</div>
