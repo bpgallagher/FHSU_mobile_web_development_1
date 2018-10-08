@@ -1,0 +1,25 @@
+<html>
+<body>
+<head>
+	<title>Simplest jQuery router</title>
+</head>
+<a href="#/hello">Hello</a><br />
+<a href="#/products/2">Product with ID</a><br />
+<a href="#/otherpath">Other page</a><br />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="hxrouter.js"></script>
+<script>
+hxRouter.addRoute({
+	'key':'hello','pattern':/^hello$/,'action':function(){console.log('hello!!!!');}
+});
+hxRouter.addRoute({
+	'key':'products','pattern':/^products\/(?<id>\d+)\/?$/,'action':function(){
+		console.log(hxRouter.getGroups(this.pattern));
+	}
+});
+hxRouter.addRoute({
+	'key':'dontknow','pattern':/^otherpath\/?$/,'action':function(){console.log('otherpath');}
+});
+</script>
+</body>
+</html>
