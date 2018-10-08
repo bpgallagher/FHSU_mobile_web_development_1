@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+let promiseToCleanTheRoom=new Promise(function(resolve,reject){
+	// do some stuff;
+	let isClean=true;
+	if(isClean){
+		resolve('clean');
+	}else{
+		reject('not clean');
+	}
+});
+promiseToCleanTheRoom.then(function(fromResolve){
+	console.log('the room is ' + fromResolve);
+}).catch(function(fromReject){
+	console.log('the room is ' + fromReject);
+});
+
+</script>
+</body>
+</html>

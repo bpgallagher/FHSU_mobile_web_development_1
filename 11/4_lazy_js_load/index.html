@@ -1,0 +1,16 @@
+<html>
+<body>
+<script>
+function loadScript(src, callback) {
+	let script = document.createElement('script');
+	script.src = src;
+	script.onload = () => callback(script);
+	document.head.append(script);
+}
+loadScript('hello_script.js', script => {
+	console.log(`Cool, the ${script.src} is loaded`);
+	console.log(hello()); // function declared in the loaded script
+});
+</script>
+</body>
+</html>

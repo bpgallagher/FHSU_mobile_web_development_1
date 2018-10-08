@@ -1,0 +1,40 @@
+<html>
+<body>
+<script>
+let cleanRoom=new Promise(function(resolve,reject){
+	// do some stuff;
+	let isClean=true;
+	if(isClean){
+		resolve('clean');
+	}else{
+		reject('not clean');
+	}
+});
+let removeGarbage=new Promise(function(resolve,reject){
+	// do some stuff;
+	let garbageRemoved=true;
+	if(garbageRemoved){
+		resolve('garbage removed');
+	}else{
+		reject('not clean');
+	}
+});
+let winIceCream=new Promise(function(resolve,reject){
+	// do some stuff;
+	let iceCreamEaten=true;
+	if(iceCreamEaten){
+		resolve('ice cream eaten');
+	}else{
+		reject('not clean');
+	}
+});
+cleanRoom().then(function(result){
+return removeGarbage(result);
+}).then(function(result){
+return winIceCream(result);
+}).then(function(result){
+console.log('finished ' + result);
+});
+</script>
+</body>
+</html>

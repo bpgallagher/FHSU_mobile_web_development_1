@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Consuming JWT with Jquery and Vuejs</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="./jqueryCookies.js"></script>
+</head>
+<body>
+	<h1>Requesting JWT</h1>
+	<form id="form" method="post">
+		<div>
+			<label>Email: <input type="email" name="email" id="email"></label>
+		</div>
+		<div>
+			<label>Password: <input type="password" name="password"
+				id="password"></label>
+		</div>
+		<div>
+			<input type="submit" name="submit" value="Log In">
+		</div>
+	</form>
+</body>
+<hr />
+<h1>Consuming JWT</h1>
+<button id="getuser">Consume token</button>
+<hr />
+<h1>Removing JWT</h1>
+<button id="logout">Logout</button>
+<script>
+	$(document).ready(function() {
+		$.ajaxSetup({
+			headers : {
+				'Authorization' : $.cookie('token')
+			}
+		});
+		//form submit
+		$("form").submit(function(event) {
+			event.preventDefault();
+			alert('x');
+			var _email = $('#email').val();
+			var _password = $('#password').val();
+			$.post("token_create.php", {
+				email : _email,
+				password : _password
+			}).done(function(data) {
+				$.cookie('token', data.token);
+				console.log(data);
+			})
+		});
+
+		$('#getuser').click(function() {
+			$.ajax({
+				type : 'GET',
+				url : 'token_use.php',
+				success : function(data) {
+					console.log(data)
+				}
+			});
+		});
+		$('#logout').click(function() {
+			$.removeCookie('token');
+		});
+	});
+</script>
+</html>
