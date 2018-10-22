@@ -1,0 +1,87 @@
+<html>
+<body>
+<script src="idb.js"></script>
+<script>
+dbPromise=idb.open('keyval-store', 1, upgradeDB => {
+  // Note: we don't use 'break' in this switch statement,
+  // the fall-through behaviour is what we want.
+  switch (upgradeDB.oldVersion) {
+    case 0:
+      upgradeDB.createObjectStore('keyval');
+    case 1:
+      upgradeDB.createObjectStore('stuff', {keyPath: ''});
+  }
+  
+  // DELETE AN OBJECT STORE
+  if(upgradeDB.objectStoreNames.contains('books')) upgradeDB.deleteObjectStore('books');
+  
+  // CREATE AN OBJECT STORE AND DEFINE A KEY
+  var booksOS=upgradeDB.createObjectStore('books',{keyPath: 'id', autoIncrement:true});
+  // DEFINE AN INDEX
+  booksOS.createIndex('ISBN','ISBN', {unique: true});
+
+}).then(db => console.log("DB opened!", db));
+
+// ADD A RECORD
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var transaction = db.transaction(['books'], 'readwrite');
+  var store = transaction.objectStore('books');
+  try{
+    store.add({title: 'Invisible cities', ISBN:'23221'});
+  }catch(exception){};
+  return transaction.complete;
+ });
+
+
+// GET ALL RECORDS 
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var tx = db.transaction(['books'], 'readonly');
+  var store = tx.objectStore('books');
+  return store.getAll();
+}).then(records=>console.log(records));
+
+// GET A RECORD BY ID
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var tx = db.transaction(['books'], 'readonly');
+  var store = tx.objectStore('books');
+  return store.get(1);
+}).then(record=>console.log(record));
+
+// MODIFY A RECORD BY ID
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var transaction = db.transaction(['books'], 'readwrite');
+  var store = transaction.objectStore('books');
+    store.put({title: 'Les miserables', ISBN:'3123123',id:1});
+  return transaction.complete;
+}).then();
+
+// GET A RECORD BY ID
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var tx = db.transaction(['books'], 'readonly');
+  var store = tx.objectStore('books');
+  return store.get(1);
+}).then(record=>console.log(record));
+
+// GET RECORDS USING CURSORS 
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var tx = db.transaction(['books'], 'readonly');
+  var store = tx.objectStore('books');
+  return store.openCursor();
+}).then(function showItems(cursor) {
+    if (!cursor) {return;}
+    for (var field in cursor.value) {console.log(field+":"+cursor.value[field]);}
+    return cursor.continue().then(showItems);
+  });
+
+// DELETE A RECORD
+dbPromise=idb.open('keyval-store', 1).then(function(db) {
+  var tx = db.transaction(['books'], 'readwrite');
+  var store = tx.objectStore('books');
+  return store.delete(1);
+}).then(record=>console.log('done'));
+
+// DELETE A DATABASE
+idb.delete('keyval-store').then(() => console.log('done!'));
+</script>
+</body>
+</html>
