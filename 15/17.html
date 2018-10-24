@@ -1,0 +1,53 @@
+<html>
+<script>
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+displayNotification();
+
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {  
+    navigator.serviceWorker.getRegistration()
+    .then(function(reg){
+    const title = 'Actions Notification';
+    const options = {
+      actions: [
+        {
+          action: 'coffee-action',
+          title: 'Coffee',
+          icon: '/images/demos/action-1-128x128.png'
+        },
+        {
+          action: 'doughnut-action',
+          title: 'Doughnut',
+          icon: '/images/demos/action-2-128x128.png'
+        },
+        {
+          action: 'gramophone-action',
+          title: 'gramophone',
+          icon: '/images/demos/action-3-128x128.png'
+        },
+        {
+          action: 'atom-action',
+          title: 'Atom',
+          icon: '/images/demos/action-4-128x128.png'
+        }
+      ]
+    };
+
+    const maxVisibleActions = Notification.maxActions;
+    if (maxVisibleActions < 4) {
+      options.body = `This notification will only display ` +
+        `${maxVisibleActions} actions.`;
+    } else {
+      options.body = `This notification can display up to ` +
+        `${maxVisibleActions} actions.`;
+    }
+
+		reg.showNotification(title, options);
+    });
+  }
+}
+</script>
+</html>

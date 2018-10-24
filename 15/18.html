@@ -1,0 +1,24 @@
+<html>
+<script>
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+displayNotification();
+
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {  
+    navigator.serviceWorker.getRegistration()
+    .then(function(reg){
+	 const title = 'Vibrate Notification';
+		const options = {
+		  // Star Wars shamelessly taken from the awesome Peter Beverloo
+		  // https://tests.peter.sh/notification-generator/
+		  vibrate: [500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]
+		};
+		reg.showNotification(title, options);
+    });
+  }
+}
+</script>
+</html>

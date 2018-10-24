@@ -1,0 +1,26 @@
+<html>
+<script src="21.js"></script>
+<script>
+Notification.requestPermission(function(status){
+    console.log('Notification permission status:', status);
+});
+displayNotification();
+
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {  
+    navigator.serviceWorker.getRegistration()
+    .then(function(reg){
+		var options = {
+		  body: 'First notification!',
+		  actions: [
+			{action: 'explore', title: 'Go to the site', icon: 'img/check.png'},
+			{action: 'close', title: 'No thank you', icon: 'img/x.png'},
+		  ]
+		};
+		reg.showNotification('Hello world!', options);
+    });
+  }
+}
+</script>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<script>
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+displayNotification();
+
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {  
+    navigator.serviceWorker.getRegistration()
+    .then(function(reg){
+		var options = {
+		  "//": "Visual Options",
+		  "body": "<String>",
+		  "icon": "<URL String>",
+		  "image": "<URL String>",
+		  "badge": "<URL String>",
+		  "vibrate": "<Array of Integers>",
+		  "sound": "<URL String>",
+		  "dir": "<String of 'auto' | 'ltr' | 'rtl'>",
+
+		  "//": "Behavioural Options",
+		  "tag": "<String>",
+		  "data": "<Anything>",
+		  "requireInteraction": "<boolean>",
+		  "renotify": "<Boolean>",
+		  "silent": "<Boolean>",
+
+		  "//": "Both Visual & Behavioural Options",
+		  "actions": "<Array of Strings>",
+
+		  "//": "Information Option. No visual affect.",
+		  "timestamp": "<Long>"
+		};
+		reg.showNotification('Hello world!', options);
+    });
+  }
+}
+</script>
+</html>

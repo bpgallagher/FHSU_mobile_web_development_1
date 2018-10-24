@@ -1,0 +1,24 @@
+<html>
+<script>
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+displayNotification();
+
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {  
+    navigator.serviceWorker.getRegistration()
+    .then(function(reg){
+		var options = {
+			body: 'Here is a notification body!',
+			icon: 'images/example.png',
+			vibrate: [100, 50, 100],
+			data: { primaryKey: 1 } // allows us to identify notification
+		};
+		reg.showNotification('Hello world!', options);
+    });
+  }
+}
+</script>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<script>
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+displayNotification();
+
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {  
+    navigator.serviceWorker.getRegistration()
+    .then(function(reg){
+const title = 'Icon Notification';
+    const options = {
+      icon: 'icon-512.png'
+    };
+		reg.showNotification(title, options);
+    });
+  }
+}
+</script>
+</html>
