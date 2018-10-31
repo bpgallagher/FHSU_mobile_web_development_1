@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="res/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+  Barcode result: 
+  <h1><span id="dbr"></span></h1>
+  <div class="select">
+    <label for="videoSource">Video source: </label><select id="videoSource"></select>
+  </div>
+  <button id="go">Read Barcode</button>
+  <div>
+    <video muted autoplay id="video"></video>
+    <canvas id="pcCanvas" width="640" height="480" style="display: none; float: bottom;"></canvas>
+    <canvas id="mobileCanvas" width="240" height="320" style="display: none; float: bottom;"></canvas>
+  </div>
+</body>
+
+<script async src="res/zxing.js"></script>
+<script src="res/video.js"></script>
+</html>

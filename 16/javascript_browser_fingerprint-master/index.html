@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Unique identifier</title>
+	<link rel="stylesheet" href="res/bootstrap.min.css">
+	</head>
+ 	<body>
+	<div class="container">
+	<h1>Browser fingeprint</h1>
+	<table class="table table-responsive  table-striped">
+		<tr><td>getFingerprint</td><td id="getFingerprint"></td></tr>
+		<tr><td>getSoftwareVersion</td><td id="getSoftwareVersion"></td></tr>
+		<tr><td>getCustomFingerprint</td><td id="getCustomFingerprint"></td></tr>
+		<tr><td>getUserAgent</td><td id="getUserAgent"></td></tr>
+		<tr><td>getUserAgentLowerCase</td><td id="getUserAgentLowerCase"></td></tr>
+		<tr><td>getBrowser</td><td id="getBrowser"></td></tr>
+		<tr><td>getBrowserVersion</td><td id="getBrowserVersion"></td></tr>
+		<tr><td>getBrowserMajorVersion</td><td id="getBrowserMajorVersion"></td></tr>
+		<tr><td>isIE</td><td id="isIE"></td></tr>
+		<tr><td>isChrome</td><td id="isChrome"></td></tr>
+		<tr><td>isFirefox</td><td id="isFirefox"></td></tr>
+		<tr><td>isSafari</td><td id="isSafari"></td></tr>
+		<tr><td>isOpera</td><td id="isOpera"></td></tr>
+		<tr><td>isMobileSafari</td><td id="isMobileSafari"></td></tr>
+		<tr><td>getEngine</td><td id="getEngine"></td></tr>
+		<tr><td>getEngineVersion</td><td id="getEngineVersion"></td></tr>
+		<tr><td>getOS</td><td id="getOS"></td></tr>
+		<tr><td>getOSVersion</td><td id="getOSVersion"></td></tr>
+		<tr><td>isWindows</td><td id="isWindows"></td></tr>
+		<tr><td>isMac</td><td id="isMac"></td></tr>
+		<tr><td>isLinux</td><td id="isLinux"></td></tr>
+		<tr><td>isUbuntu</td><td id="isUbuntu"></td></tr>
+		<tr><td>isSolaris</td><td id="isSolaris"></td></tr>
+		<tr><td>getDevice</td><td id="getDevice"></td></tr>
+		<tr><td>getDeviceType</td><td id="getDeviceType"></td></tr>
+		<tr><td>getDeviceVendor</td><td id="getDeviceVendor"></td></tr>
+		<tr><td>getCPU</td><td id="getCPU"></td></tr>
+		<tr><td>isMobile</td><td id="isMobile"></td></tr>
+		<tr><td>isMobileMajor</td><td id="isMobileMajor"></td></tr>
+		<tr><td>isMobileAndroid</td><td id="isMobileAndroid"></td></tr>
+		<tr><td>isMobileOpera</td><td id="isMobileOpera"></td></tr>
+		<tr><td>isMobileWindows</td><td id="isMobileWindows"></td></tr>
+		<tr><td>isMobileBlackBerry</td><td id="isMobileBlackBerry"></td></tr>
+		<tr><td>isMobileIOS</td><td id="isMobileIOS"></td></tr>
+		<tr><td>isIphone</td><td id="isIphone"></td></tr>
+		<tr><td>isIpad</td><td id="isIpad"></td></tr>
+		<tr><td>isIpod</td><td id="isIpod"></td></tr>
+		<tr><td>getScreenPrint</td><td id="getScreenPrint"></td></tr>
+		<tr><td>getColorDepth</td><td id="getColorDepth"></td></tr>
+		<tr><td>getCurrentResolution</td><td id="getCurrentResolution"></td></tr>
+		<tr><td>getAvailableResolution</td><td id="getAvailableResolution"></td></tr>
+		<tr><td>getDeviceXDPI</td><td id="getDeviceXDPI"></td></tr>
+		<tr><td>getDeviceYDPI</td><td id="getDeviceYDPI"></td></tr>
+		<tr><td>getPlugins</td><td id="getPlugins"></td></tr>
+		<tr><td>isJava</td><td id="isJava"></td></tr>
+		<tr><td>getJavaVersion</td><td id="getJavaVersion"></td></tr>
+		<tr><td>isFlash</td><td id="isFlash"></td></tr>
+		<tr><td>getFlashVersion</td><td id="getFlashVersion"></td></tr>
+		<tr><td>isSilverlight</td><td id="isSilverlight"></td></tr>
+		<tr><td>getSilverlightVersion</td><td id="getSilverlightVersion"></td></tr>
+		<tr><td>isMimeTypes</td><td id="isMimeTypes"></td></tr>
+		<tr><td>getMimeTypes</td><td id="getMimeTypes"></td></tr>
+		<tr><td>isFont</td><td id="isFont"></td></tr>
+		<tr><td>getFonts</td><td id="getFonts"></td></tr>
+		<tr><td>isLocalStorage</td><td id="isLocalStorage"></td></tr>
+		<tr><td>isSessionStorage</td><td id="isSessionStorage"></td></tr>
+		<tr><td>isCookie</td><td id="isCookie"></td></tr>
+		<tr><td>getTimeZone</td><td id="getTimeZone"></td></tr>
+		<tr><td>getLanguage</td><td id="getLanguage"></td></tr>
+		<tr><td>getSystemLanguage</td><td id="getSystemLanguage"></td></tr>
+		<tr><td>isCanvas</td><td id="isCanvas"></td></tr>
+		<tr><td>getCanvasPrint</td><td id="getCanvasPrint"></td></tr>
+	</table>
+	</div>
+	<script src="res/jquery.min.js"></script>
+	<script src="res/holder.js"></script>
+	<script src="res/application.js"></script>
+	<script src="res/client.min.js"></script>
+	<script>
+		var client = new ClientJS();
+		var fingerprint = client.getFingerprint();
+		$('#getSoftwareVersion').text(client.getSoftwareVersion());
+		$('#getFingerprint').text(fingerprint);
+		var ua = client.getBrowserData().ua;
+		var canvasprint = client.getCanvasPrint();
+		$('#getCustomFingerprint').text(client.getCustomFingerprint(ua, canvasprint));
+
+		$('#getUserAgent').text(client.getUserAgent());
+		$('#getUserAgentLowerCase').text(client.getUserAgentLowerCase());
+
+		$('#getBrowser').text(client.getBrowser());
+		$('#getBrowserVersion').text(client.getBrowserVersion());
+		$('#getBrowserMajorVersion').text(client.getBrowserMajorVersion());
+		$('#isIE').text(client.isIE());
+		$('#isChrome').text(client.isChrome());
+		$('#isFirefox').text(client.isFirefox());
+		$('#isSafari').text(client.isSafari());
+		$('#isOpera').text(client.isOpera());
+		$('#isMobileSafari').text(client.isMobileSafari());
+
+		$('#getEngine').text(client.getEngine());
+		$('#getEngineVersion').text(client.getEngineVersion());
+
+		$('#getOS').text(client.getOS());
+		$('#getOSVersion').text(client.getOSVersion());
+		$('#isWindows').text(client.isWindows());
+		$('#isMac').text(client.isMac());
+		$('#isLinux').text(client.isLinux());
+		$('#isUbuntu').text(client.isUbuntu());
+		$('#isSolaris').text(client.isSolaris());
+
+		$('#getDevice').text(client.getDevice());
+		$('#getDeviceType').text(client.getDeviceType());
+		$('#getDeviceVendor').text(client.getDeviceVendor());
+
+		$('#getCPU').text(client.getCPU());
+
+		$('#isMobile').text(client.isMobile());
+		$('#isMobileMajor').text(client.isMobileMajor());
+		$('#isMobileAndroid').text(client.isMobileAndroid());
+		$('#isMobileOpera').text(client.isMobileOpera());
+		$('#isMobileWindows').text(client.isMobileWindows());
+		$('#isMobileBlackBerry').text(client.isMobileBlackBerry());
+
+		$('#isMobileIOS').text(client.isMobileIOS());
+		$('#isIphone').text(client.isIphone());
+		$('#isIpad').text(client.isIpad());
+		$('#isIpod').text(client.isIpod());
+
+		$('#getScreenPrint').text(client.getScreenPrint());
+		$('#getColorDepth').text(client.getColorDepth());
+		$('#getCurrentResolution').text(client.getCurrentResolution());
+		$('#getAvailableResolution').text(client.getAvailableResolution());
+		$('#getDeviceXDPI').text(client.getDeviceXDPI());
+		$('#getDeviceYDPI').text(client.getDeviceYDPI());
+
+		$('#getPlugins').text(client.getPlugins());
+		$('#isJava').text(client.isJava());
+		$('#getJavaVersion').text(client.getJavaVersion());
+		$('#isFlash').text(client.isFlash());
+		$('#getFlashVersion').text(client.getFlashVersion());
+		$('#isSilverlight').text(client.isSilverlight());
+		$('#getSilverlightVersion').text(client.getSilverlightVersion());
+
+		$('#isMimeTypes').text(client.isMimeTypes());
+		$('#getMimeTypes').text(client.getMimeTypes());
+
+		$('#isFont').text(client.isFont("Times New Roman"));
+		$('#getFonts').text(client.getFonts());
+
+		$('#isLocalStorage').text(client.isLocalStorage());
+		$('#isSessionStorage').text(client.isSessionStorage());
+		$('#isCookie').text(client.isCookie());
+
+		$('#getTimeZone').text(client.getTimeZone());
+
+		$('#getLanguage').text(client.getLanguage());
+		$('#getSystemLanguage').text(client.getSystemLanguage());
+
+		$('#isCanvas').text(client.isCanvas());
+
+		$('#getCanvasPrint').text(client.getCanvasPrint());
+	</script>
+</body>
+</html>
